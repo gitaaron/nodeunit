@@ -1,6 +1,5 @@
 /*global setTimeout: false, console: false */
-(function () {
-
+define(['exports'], function(exports) {
     var async = {};
 
     // global on the server, window in the browser
@@ -619,5 +618,5 @@
             }
         };
     };
-
-}());
+    return async;
+});

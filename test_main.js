@@ -1,4 +1,23 @@
 require([], function() {
-    var testrunner = require('lib/reporters/default');
-    testrunner.run(['test/example.js']);
+
+    var files = [];
+    var reporter_path = 'lib/reporters/';
+    var reporter_module = reporter_path + 'default';
+    var args = process.ARGV.slice(2);
+    var options = {};
+
+    args.forEach(function(arg) {
+        if(arg.slice(0,11)=='--reporter=') {
+            reporter_module = reporter_path + arg.slice(11);
+        } else if(arg.slice(0,9)=='--output=') {
+            options.output = arg.slice(9);
+        } else if(arg!='test_main.js') {
+            files.push(arg);
+        }
+
+    });
+
+    var testrunner = require(reporter_module);
+    testrunner.run(files, options);
+
 });

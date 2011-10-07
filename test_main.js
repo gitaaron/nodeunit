@@ -1,10 +1,12 @@
-require([], function() {
+require(['fs', 'path'], function(fs, path) {
+
 
     var files = [];
     var reporter_path = 'lib/reporters/';
     var reporter_module = reporter_path + 'default';
     var args = process.ARGV.slice(2);
-    var options = {};
+    var content = fs.readFileSync(path.resolve()+'/bin/nodeunit.json');
+    var options = JSON.parse(content);
 
     args.forEach(function(arg) {
         if(arg.slice(0,11)=='--reporter=') {

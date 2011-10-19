@@ -1,4 +1,15 @@
-Nodeunit
+Nodeunit (for requirejs)
+========================
+
+This is actually an altered version of nodeunit.  The alteration were made to use nodeunit as a starting point for testing code written under AMD (see requirejs.org).
+
+For using this altered project do :
+
+    ~:node r.js test_main.js test/test-base.js
+
+The rest of this is documentation specific to nodeunit.  Most of it should still apply.
+
+Nodeunit 
 ========
 
 Simple syntax, powerful tools. Nodeunit provides easy async unit testing for

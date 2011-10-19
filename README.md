@@ -7,7 +7,7 @@ For using this altered project do :
 
     ~:node r.js test_main.js test/test-base.js
 
-The rest of this is documentation specific to nodeunit.  Most of it should still apply.
+The rest of this is documentation is specific to nodeunit.  Most of it should still apply.
 
 Nodeunit 
 ========
